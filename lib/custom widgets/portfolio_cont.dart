@@ -41,7 +41,7 @@ class PortfolioCont extends StatelessWidget {
                   itemCount: data[0]["portfolio"].length!,
                   itemBuilder: (context, index) {
                     return PortfolioCard(
-                      link: "",
+                      link: data[0]["portfolio"]["port${index + 1}"],
                       text: index == 0 ? true : false,
                     );
                   },
