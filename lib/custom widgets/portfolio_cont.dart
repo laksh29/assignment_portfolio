@@ -12,43 +12,41 @@ class PortfolioCont extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        flex: 3,
-        child: Container(
-          margin: const EdgeInsets.all(10.0),
-          padding: const EdgeInsets.all(30.0),
-          decoration: BoxDecoration(
-              color: bgColor[1], borderRadius: BorderRadius.circular(25)),
-          child: Column(
+    return Container(
+      margin: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(30.0),
+      decoration: BoxDecoration(
+          color: bgColor[1], borderRadius: BorderRadius.circular(25)),
+      child: Column(
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  Text(
-                    "UI Portfolio",
-                    style: buildHeading1(),
-                  ),
-                  const Spacer(),
-                  Text(
-                    "See All",
-                    style: buildHeading2(),
-                  ),
-                ],
+              Text(
+                "UI Portfolio",
+                style: buildHeading1(),
               ),
-              buildHeight(20.0),
-              Expanded(
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: data[0]["portfolio"].length!,
-                  itemBuilder: (context, index) {
-                    return PortfolioCard(
-                      link: data[0]["portfolio"]["port${index + 1}"],
-                      text: index == 0 ? true : false,
-                    );
-                  },
-                ),
+              const Spacer(),
+              Text(
+                "See All",
+                style: buildHeading2(),
               ),
             ],
           ),
-        ));
+          buildHeight(20.0),
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: data[0]["portfolio"].length!,
+              itemBuilder: (context, index) {
+                return PortfolioCard(
+                  link: data[0]["portfolio"]["port${index + 1}"],
+                  text: index == 0 ? true : false,
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

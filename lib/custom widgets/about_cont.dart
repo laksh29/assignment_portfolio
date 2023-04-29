@@ -12,43 +12,43 @@ class AboutCont extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        flex: 2,
-        child: Container(
-          margin: const EdgeInsets.all(10.0),
-          padding: const EdgeInsets.all(30.0),
-          decoration: BoxDecoration(
-              color: bgColor[1], borderRadius: BorderRadius.circular(25)),
-          child: Column(children: [
-            Expanded(
-              flex: 1,
-              child: Row(
-                children: [
-                  Text(
-                    "About",
-                    style: buildHeading1(),
-                  ),
-                  const Spacer(),
-                  Text(
-                    "Resume",
-                    style: buildHeading2(),
-                  )
-                ],
+    return Container(
+      margin: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(30.0),
+      decoration: BoxDecoration(
+          color: bgColor[1], borderRadius: BorderRadius.circular(25)),
+      child: Column(children: [
+        Expanded(
+          flex: 1,
+          child: Row(
+            children: [
+              Text(
+                "About",
+                style: buildHeading1(),
               ),
-            ),
-            buildHeight(20.0),
-            Flexible(
-                flex: 4,
-                child: Text(
-                  data[0]["about"],
-                  style: GoogleFonts.poppins(
-                    color: textColor[0],
-                    fontSize: 12.2,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.start,
-                ))
-          ]),
-        ));
+              const Spacer(),
+              Text(
+                "Resume",
+                style: buildHeading2(),
+              )
+            ],
+          ),
+        ),
+        buildHeight(20.0),
+        Flexible(
+            flex: 4,
+            child: Text(
+              data[0]["about"],
+              style: GoogleFonts.poppins(
+                color: textColor[0],
+                fontSize: 12.2,
+                fontWeight: FontWeight.w400,
+              ),
+              textAlign: TextAlign.start,
+              maxLines: 7,
+              overflow: TextOverflow.ellipsis,
+            ))
+      ]),
+    );
   }
 }

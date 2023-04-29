@@ -11,44 +11,43 @@ class MenuCont extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      flex: 1,
-      child: Container(
-        margin: const EdgeInsets.all(10.0),
-        padding: const EdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-            color: bgColor[1], borderRadius: BorderRadius.circular(15)),
-        child: Row(
-          // mainAxisAlignment:
-          //     MainAxisAlignment.spaceEvenly,
-          children: [
-            Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text: data[0]["me"]["gibrish1"],
-                    style: GoogleFonts.poppins(
-                      color: textColor[0],
-                      fontWeight: FontWeight.w600,
-                    ),
+    final width = MediaQuery.of(context).size.width;
+    return Container(
+      margin: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+          color: bgColor[1], borderRadius: BorderRadius.circular(15)),
+      child: Row(
+        // mainAxisAlignment:
+        //     MainAxisAlignment.spaceEvenly,
+        children: [
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: data[0]["me"]["gibrish1"],
+                  style: GoogleFonts.poppins(
+                    color: textColor[0],
+                    fontWeight: FontWeight.w600,
                   ),
-                  TextSpan(
-                    text: data[0]["me"]["gibrish2"],
-                    style: GoogleFonts.poppins(
-                      color: textColor[1],
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                TextSpan(
+                  text: data[0]["me"]["gibrish2"],
+                  style: GoogleFonts.poppins(
+                    color: textColor[1],
+                    fontWeight: FontWeight.w600,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            const Spacer(),
-            Icon(
-              Icons.menu_rounded,
-              color: textColor[1],
-            )
-          ],
-        ),
+          ),
+          // Text("$width"),
+          const Spacer(),
+          Icon(
+            Icons.menu_rounded,
+            color: textColor[1],
+          )
+        ],
       ),
     );
   }

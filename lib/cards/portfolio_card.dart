@@ -20,7 +20,7 @@ class PortfolioCard extends StatelessWidget {
         aspectRatio: 1,
         child: Container(
           decoration: BoxDecoration(
-            color: bgColor[2],
+            // color: bgColor[2],
             borderRadius: BorderRadius.circular(20.0),
             image: DecorationImage(
               image: AssetImage(link.toString()),

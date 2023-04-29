@@ -10,20 +10,18 @@ class PhotoCont extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        margin: const EdgeInsets.all(5.0),
-        padding: const EdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-          color: bgColor[2],
-          borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
-              image: AssetImage(
-                data[0]["me"]["image"],
-              ),
-              fit: BoxFit.fitHeight,
-              alignment: Alignment.bottomCenter),
-        ),
+    return Container(
+      margin: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(10.0),
+      decoration: BoxDecoration(
+        color: bgColor[2],
+        borderRadius: BorderRadius.circular(15),
+        image: DecorationImage(
+            image: AssetImage(
+              data[0]["me"]["image"],
+            ),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.bottomCenter),
       ),
     );
   }
