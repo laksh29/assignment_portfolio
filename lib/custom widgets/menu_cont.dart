@@ -11,7 +11,7 @@ class MenuCont extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     return Container(
       margin: const EdgeInsets.all(10.0),
       padding: const EdgeInsets.all(10.0),

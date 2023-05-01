@@ -14,6 +14,8 @@ class PortfolioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     return Container(
       margin: const EdgeInsets.only(right: 20.0),
       child: AspectRatio(
@@ -38,7 +40,11 @@ class PortfolioCard extends StatelessWidget {
                     // link.toString(),
                     style: GoogleFonts.poppins(
                       color: textColor[1],
-                      fontSize: 18,
+                      fontSize: width < 500
+                          ? 18
+                          : width > 1016
+                              ? 18
+                              : 12,
                       fontWeight: FontWeight.w400,
                     ),
                   )

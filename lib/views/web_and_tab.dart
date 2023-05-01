@@ -39,8 +39,8 @@ class WebAndTab extends StatelessWidget {
                     Expanded(
                         flex: 1,
                         child: Column(children: const [
-                          Quote(),
-                          Stats(),
+                          Flexible(child: Quote()),
+                          Flexible(child: Stats()),
                         ])),
                     Expanded(
                       child: Column(
@@ -75,7 +75,11 @@ class WebAndTab extends StatelessWidget {
                   child: Row(
                     children: const [
                       Flexible(flex: 3, child: PortfolioCont()),
-                      Flexible(flex: 2, child: AboutCont()),
+                      Flexible(
+                          flex: 2,
+                          child: AboutCont(
+                            fold: 10,
+                          )),
                     ],
                   )),
             ],

@@ -1,3 +1,5 @@
+import 'package:assignment_portfolio/custom%20widgets/quote_cont.dart';
+import 'package:assignment_portfolio/custom%20widgets/stats_cont.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
@@ -7,9 +9,7 @@ import '../custom widgets/menu_cont.dart';
 import '../custom widgets/name_cont.dart';
 import '../custom widgets/photo_cont.dart';
 import '../custom widgets/portfolio_cont.dart';
-import '../custom widgets/quote_cont.dart';
 import '../custom widgets/socials_cont.dart';
-import '../custom widgets/stats_cont.dart';
 
 class MobileView extends StatelessWidget {
   const MobileView({
@@ -21,7 +21,7 @@ class MobileView extends StatelessWidget {
     return Center(
       child: SingleChildScrollView(
         child: AspectRatio(
-          aspectRatio: 245 / 1016,
+          aspectRatio: 175 / 1016,
           child: Container(
             height: 1000,
             margin:
@@ -32,13 +32,16 @@ class MobileView extends StatelessWidget {
               borderRadius: BorderRadius.circular(40),
             ),
             child: Column(
-              children: [
+              mainAxisSize: MainAxisSize.min,
+              children: const [
                 SizedBox(height: 70, child: MenuCont()),
                 SizedBox(height: 500, child: PhotoCont()),
                 SizedBox(height: 70, child: NameCont()),
                 SizedBox(height: 200, child: LocationCont()),
                 SizedBox(height: 70, child: SocialsCont()),
-                SizedBox(height: 250, child: AboutCont()),
+                SizedBox(height: 300, child: Quote()),
+                SizedBox(height: 350, child: Stats()),
+                SizedBox(height: 250, child: AboutCont(fold: 7)),
                 SizedBox(height: 250, child: PortfolioCont())
               ],
             ),

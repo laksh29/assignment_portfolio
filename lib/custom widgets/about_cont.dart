@@ -6,7 +6,9 @@ import '../constants/data.dart';
 import '../constants/colors.dart';
 
 class AboutCont extends StatelessWidget {
+  final int fold;
   const AboutCont({
+    required this.fold,
     super.key,
   });
 
@@ -45,7 +47,7 @@ class AboutCont extends StatelessWidget {
                 fontWeight: FontWeight.w400,
               ),
               textAlign: TextAlign.start,
-              maxLines: 7,
+              maxLines: fold,
               overflow: TextOverflow.ellipsis,
             ))
       ]),

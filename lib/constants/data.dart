@@ -8,6 +8,11 @@ List data = [
       "port2": "assets/port2.jpeg",
       "port3": "assets/port3.jpeg"
     },
+    "expD": {
+      "one": "Years Experience",
+      "two": "Handled Projects",
+      "three": "Clients",
+    },
     "exp": {
       "year": "2+",
       "projects": "54+",
